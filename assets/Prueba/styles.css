@@ -1,0 +1,212 @@
+@font-face {
+    font-family: 'PixelFont';
+    src: url('assets/fonts/slkscr.ttf') format('truetype');
+    /* Puedes agregar otros formatos de fuente aquí si es necesario */
+}
+
+/* Reset de estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* TAGS */
+
+/* Estilos generales */
+body {
+    background-color: #111; /* Fondo oscuro */
+    color: #fff; /* Texto blanco */
+    font-family: 'PixelFont', Arial, sans-serif; /* Utiliza la fuente de pixel art */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Establece la altura mínima del cuerpo al 100% del viewport height */
+    max-height: 100vh; /* Altura máxima igual al 100% del viewport height */
+}
+
+body, main {
+    overflow: hidden;
+}
+
+main {
+    flex: 1; /* Hace que el elemento main ocupe el espacio restante verticalmente */
+}
+
+header {
+    text-align: center;
+    padding: 20px 0;
+}
+
+h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: normal;
+    /* Estilos para el aspecto retro */
+    text-shadow: 2px 2px 4px #000;
+}
+
+/* Aplicar la animación al encabezado */
+header h1 {
+    animation: fadeIn 1s ease-out;
+}
+
+main {
+    max-width: 1000px; /* Ancho máximo del contenido */
+    margin: 0 auto; /* Centrar el contenido horizontalmente */
+    text-align: center; /* Centrar contenido horizontalmente */
+    padding-top: 30px; /* Añadir espacio desde arriba */
+}
+
+section {
+    margin-bottom: 40px;
+    animation: slideIn 1s ease-out;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    /* Estilos para el aspecto retro */
+    text-shadow: 2px 2px 4px #000;
+}
+
+/* Añadimos estilos para el footer */
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    z-index: 100; /* Asegura que el footer esté por encima de otros elementos */
+}
+
+footer p {
+    color: #fff;
+}
+
+/* ID's */
+
+/* Aplicar la animación de pulso y entrada desde la derecha al botón de Galería de Videos */
+#btnVideos {
+    animation-delay: 0.5s; /* Retrasar la animación del botón de Videos */
+    animation: slideInFromRight 1s ease-out forwards; /* Aplicar animación de entrada desde la derecha */
+}
+
+/* Aplicar la animación de pulso y entrada desde la izquierda al botón de Currículum */
+#btnCurriculum {
+    animation: slideInFromLeft 1s ease-out forwards; /* Aplicar animación */
+}
+
+#videoContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 50px;
+}
+
+#currentVideo {
+    width: 40%;
+}
+
+#previousVideo:hover, #nextVideo:hover {
+    transform: scale(0.9);
+    cursor: pointer;
+}
+
+/* CLASSES */
+
+/* Animación de entrada y pulso para los botones */
+.retroButton {
+    font-family: 'PixelFont', Arial, sans-serif; /* Utiliza la fuente de pixel art */
+    background-color: #222; /* Color de fondo oscuro */
+    color: #fff; /* Texto blanco */
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 10px; /* Añade un poco de espacio entre los botones */
+    display: inline-block; /* Convertir en bloque para ajustar el ancho */
+    animation: slideInFromLeft 1s ease-out forwards; /* Aplicar animación de entrada desde la izquierda */
+}
+
+.retroButton:hover {
+    background-color: #444; /* Color de fondo más oscuro al pasar el ratón */
+    animation: pulse 2s infinite alternate; /* Aplicar animación de pulso */
+}
+
+.videoItem {
+    width: 30%;
+    transition: transform 0.3s ease-in-out;
+    overflow: hidden; /* Evitar la aparición de la barra de desplazamiento */
+}
+
+/* CSS */
+.videoItem video {
+    width: 100%;
+    display: block;
+    overflow: hidden; /* Evitar la aparición de la barra de desplazamiento */
+}
+
+/* Definición de la animación para el título */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Definición de la animación para las secciones */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animación de pulso */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Animación de entrada desde la izquierda */
+@keyframes slideInFromLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Animación de entrada desde la derecha */
+@keyframes slideInFromRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}

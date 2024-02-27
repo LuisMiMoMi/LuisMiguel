@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luis Miguel Montell Mira</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Luis Miguel Montell Mira</h1>
+    </header>
+    <main>
+        <button id="btnCurriculum" class="retroButton">Currículum</button>
+        <button id="btnVideos" class="retroButton">Galería de Videos</button>
+        <section id="curriculum">
+            <h2>Currículum</h2>
+            <!-- Aquí puedes agregar tu información personal y profesional -->
+        </section>
+        <section id="videos" style="display: none;">
+            <h2>Galería de Videos</h2>
+            <div id="videoContainer">
+                <div id="previousVideo" class="videoItem">
+                    <!-- Video anterior -->
+                    <video controls>
+                        <source src="" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div id="currentVideo" class="videoItem">
+                    <!-- Video actual -->
+                    <video controls autoplay loop>
+                        <source src="" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div id="nextVideo" class="videoItem">
+                    <!-- Video siguiente -->
+                    <video controls>
+                        <source src="" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Luis Miguel Montell Mira</p>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>
